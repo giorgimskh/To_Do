@@ -1,5 +1,6 @@
 package todo.Manager;
 
+import todo.Exceptions.UserFriendlyException;
 import todo.model.Folder;
 import todo.model.Task;
 
@@ -14,6 +15,15 @@ public class FolderManager {
     }
 
     public void CreateFolder(String name){
+        try{
+            if(getFolderByName(name)==null || name.trim().isEmpty()){
+                throw new UserFriendlyException("This folder is empty");
+            }
+        } catch (UserFriendlyException e){
+            System.out.println("⚠ " + e.getMessage()+" !");
+        }
+
+
         Folders.add(new Folder((new ArrayList<>()),name));
     }
 

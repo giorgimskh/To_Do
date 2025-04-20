@@ -18,6 +18,6 @@ public class Main {
         manager.addTaskToFolder(personal,new Task("Jogging",false,LocalDate.now()));
         manager.TaskList(personal);
 
-
+        manager.CreateFolder("Personal");
         }
     }
