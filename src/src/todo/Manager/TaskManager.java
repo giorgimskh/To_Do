@@ -37,6 +37,18 @@ public class TaskManager {
 
          return PendingTasks;
     }
+
+    public void getTaskToday(){
+        List<Task> list= getPendingTasks();
+
+        for(Task task:list){
+            if(task.getDueTime()!=null && task.getDueTime().equals(LocalDate.now())){
+                System.out.println(task.getDescription() + " | Date: "+task.getDueTime());
+            }
+        }
+
+    }
+
     public List<Task> getTasks() {
         return Tasks;
     }
