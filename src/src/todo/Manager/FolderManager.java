@@ -9,7 +9,7 @@ import java.util.List;
 public class FolderManager {
     private List<Folder> Folders;
 
-    public FolderManager(List<Folder> folders) {
+    public FolderManager() {
         this.Folders = new ArrayList<>();
     }
 
@@ -38,8 +38,16 @@ public class FolderManager {
         return Folders;
     }
 
-    public void TaskList(Folder folder){
-        System.out.println(folder.getTasks());
+    public void TaskList(Folder folder) {
+        System.out.println("Folder Name: " + folder.getName());
+
+        if (folder != null) {
+            List<Task> tasks = folder.getTasks();
+
+            for (int i=0;i<tasks.size();i++){
+                System.out.println(i+1+")"+tasks.get(i).getDescription() + " | Due: " + tasks.get(i).getDueTime() + " | Completed: " + tasks.get(i).isCompleted());
+            }
+        }
     }
 
     @Override
