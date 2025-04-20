@@ -33,4 +33,12 @@ public class Task {
     public void setCompleted(boolean completed) {
         this.completed = completed;
     }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setDueTime(LocalDate dueTime) {
+        DueTime = dueTime;
+    }
 }

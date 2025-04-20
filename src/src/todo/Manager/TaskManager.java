@@ -49,7 +49,7 @@ public class TaskManager {
 
     }
 
-    public List<Task> getTasks() {
+    private List<Task> getTasks() {
         return Tasks;
     }
 
