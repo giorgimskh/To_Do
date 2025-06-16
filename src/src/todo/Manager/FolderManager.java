@@ -37,7 +37,11 @@ public class FolderManager {
     }
 
     public void addTaskToFolder(Folder folder, Task task) {
-        folder.getTasks().add(task); // or folder.addTask(task) if you implement that method
+        folder.getTasks().add(task);
+    }
+
+    public void AddTaskToFolder(String name,Task task){
+        getFolderByName(name).getTasks().add(task);
     }
 
     public void deleteFolder(Folder folder) {
