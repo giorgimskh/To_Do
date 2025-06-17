@@ -10,7 +10,7 @@ public class TaskManager {
     private List<Task> Tasks;
 
     public TaskManager(List<Task> tasks) {
-        this.Tasks = new ArrayList<>();
+        this.Tasks = tasks;
     }
 
     public void AddTask(String description, LocalDate DueTime){
@@ -38,7 +38,7 @@ public class TaskManager {
          return PendingTasks;
     }
 
-    public void getTaskToday(){
+    public void printTodayTasks(){
         List<Task> list= getPendingTasks();
 
         for(Task task:list){
@@ -49,9 +49,23 @@ public class TaskManager {
 
     }
 
-    private List<Task> getTasks() {
+    protected List<Task> getTasks() {
         return Tasks;
     }
 
+    public void removeTaskByIndex(int index) {
+        if (index >= 0 && index < Tasks.size()) {
+            Tasks.remove(index);
+        }
+    }
+
+    public void listAllTasks() {
+        for (int i = 0; i < Tasks.size(); i++) {
+            Task task = Tasks.get(i);
+            System.out.println((i + 1) + ") " + task.getDescription() +
+                    " | Due: " + task.getDueTime() +
+                    " | Done: " + task.isCompleted());
+        }
+    }
 
 }
